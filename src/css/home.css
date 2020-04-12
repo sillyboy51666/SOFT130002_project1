@@ -1,0 +1,230 @@
+main {
+    margin: 0 auto; /*使main居中*/
+    max-width: 1200px;
+}
+
+.head-photo {
+    width: 100%;
+}
+
+.gallery {
+    display: flex;
+    flex-flow: row wrap; /*弹性盒横向排列*/
+    justify-content: space-around;
+}
+
+.gallery figure {
+    box-sizing: border-box;
+    border-radius: 2%;
+    background-color: #e2e2e2;
+    padding: 1%;
+    margin: 5px 1%;
+    flex: 0 0 30%; /*设置固定的百分比宽度，分布一行三栏*/
+    overflow: hidden; /*文字超出部分不显示*/
+}
+
+/*图片容器，实现缩放图片长宽比例与占比不变*/
+.photo-wrapper {
+    position: relative; /*方便img-wrapper的定位*/
+    width: 90%;
+    padding-bottom: 90%; /*通过父容器设定高度*/
+}
+
+/*img容器，控制img的大小*/
+.photo-wrapper .img-wrapper {
+    position: absolute;
+    margin: 0 5%;
+    padding: 4%;
+    width: 92%;
+    height: 92%;
+}
+
+.photo-wrapper .img-wrapper img {
+    width: 100%;
+    height: 100%;
+    border-radius: 5%;
+}
+
+.gallery figure figcaption {
+    flex: 0 0 70%;
+    width: 100%;
+    margin-top: 10px;
+    border-top: 1px solid #868686;
+    padding-top: 3px;
+}
+
+.gallery figure figcaption h2 {
+    font-size: 1.5em;
+    color: black;
+    text-transform: uppercase;
+}
+
+.gallery figure figcaption p {
+    display: block;
+    width: 100%;
+    font-size: 1em;
+    color: #343434;
+    line-height: 1.5em;
+    /*设置超出部分显示省略号*/
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.assistance {
+    position: fixed; /*保持在窗口固定位置*/
+    bottom: 10%;
+    right: 2%;
+}
+
+.assistance a {
+    display: block;
+}
+
+/*辅助图标图片大小*/
+.assistance a img {
+    width: 1.5em;
+    height: 1.5em;
+    border-radius: 50%;
+}
+
+footer {
+    position: relative; /*便于子元素定位*/
+    background-color: black;
+    margin: 2% 0 0 0;
+    padding: 0;
+    border: 1px solid rgba(255, 255, 255, .5);
+    border-right: none;
+    border-left: none;
+    overflow: hidden;
+    color: white;
+    height: 200px;
+}
+
+/*定位子元素*/
+footer #term {
+    position: absolute;
+    top: 20px;
+    left: 25%;
+}
+
+footer #privacy {
+    position: absolute;
+    top: 60px;
+    left: 25%;
+}
+
+footer #about {
+    position: absolute;
+    top: 100px;
+    left: 25%;
+}
+
+footer #cookie {
+    position: absolute;
+    top: 20px;
+    left: 45%;
+}
+
+footer #contact {
+    position: absolute;
+    top: 60px;
+    left: 45%;
+}
+
+/*设置超连接样式*/
+footer a {
+    text-decoration: none;
+    color: white;
+}
+
+footer a:hover {
+    color: #bababa;
+}
+
+footer img {
+    position: absolute;
+    right: 20%;
+    top: 5%;
+    height: 80%;
+}
+
+.copyright {
+    position: absolute;
+    bottom: 2%;
+    left: 35%;
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    font-size: 0.5em;
+    color: #ffffff;
+    margin: 0;
+    padding: 0;
+    clear: both;
+}
+
+/*媒体查询*/
+@media (min-width: 501px) and (max-width: 768px) {
+    .gallery figure {
+        flex: 0 0 40%; /*将分布变为一行两栏*/
+    }
+
+    footer img {
+        position: absolute;
+        right: 10%;
+        top: 5%;
+        height: 80%;
+    }
+
+    .copyright {
+        left: 10%;
+    }
+}
+
+@media (max-width: 500px) {
+    .gallery figure {
+        flex: 0 0 90%; /*将分布变为一行一栏*/
+    }
+
+    footer {
+        height: 150px;
+    }
+
+    /*重新定位footer中的元素*/
+    footer #term {
+        position: absolute;
+        top: 20px;
+        left: 10%;
+    }
+
+    footer #privacy {
+        position: absolute;
+        top: 20px;
+        left: 40%;
+    }
+
+    footer #about {
+        position: absolute;
+        top: 20px;
+        left: 70%;
+    }
+
+    footer #cookie {
+        position: absolute;
+        top: 60px;
+        left: 25%;
+    }
+
+    footer #contact {
+        position: absolute;
+        top: 60px;
+        left: 55%;
+    }
+
+    /*取消图片显示*/
+    footer img {
+        opacity: 0;
+    }
+
+    .copyright {
+        left: 5%;
+    }
+}

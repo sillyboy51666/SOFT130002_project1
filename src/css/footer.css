@@ -1,0 +1,17 @@
+footer {
+    background-color: black;
+    margin: 0;
+    padding: 0;
+    border: 1px solid rgba(255, 255, 255, .5);
+    border-right: none;
+    border-left: none;
+    overflow: hidden;
+    clear: both;
+}
+
+.copyright {
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    font-size: 0.5em;
+    text-align: center;
+    color: #ffffff;
+}

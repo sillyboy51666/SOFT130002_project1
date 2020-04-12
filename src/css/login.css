@@ -1,0 +1,104 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-size: 100% 100%;
+    background: url("../../img/images/background.png") no-repeat fixed center; /*背景图片*/
+}
+
+main {
+    margin: 5% auto; /*使main居中*/
+}
+
+main h1 {
+    text-align: center;
+    font-size: 1.5em;
+    padding: 2% 0;
+}
+
+main form {
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    border-radius: 5px;
+    background: rgba(255, 255, 255, 0.5);
+    width: 30%;
+    margin: 0 auto;
+    padding: 0 2%;
+}
+
+form input {
+    background-color: rgba(255, 255, 255, 0.7);
+    border: 1px solid rgba(170, 170, 170, 0.1);
+    display: block;
+    margin: 10% 0;
+    width: 100%;
+    border-radius: 5px;
+    padding: 1%;
+    outline: none;
+    font-size: 1em;
+    height: 2em;
+}
+
+/*按钮样式*/
+form button {
+    margin: 0 0 10% 0;
+    outline: none;
+    border: 1px solid transparent;
+    background-color: #6fce6f;
+    color: white;
+    font-size: 1em;
+    font-family: 微软雅黑, 宋体, Arial, Helvetica, Verdana, sans-serif;
+    font-weight: bold;
+    border-radius: 3px;
+    width: 100%;
+    height: 2em;
+}
+
+main form button:hover {
+    background-color: #6fd86f;
+}
+
+main form button:active {
+    background: #57a957;
+}
+
+main p {
+    text-align: center;
+    font-size: 1em;
+    margin: 1% 0 0 0;
+}
+
+main p a {
+    text-decoration: none;
+}
+
+footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    background: none;
+    border: none;
+}
+
+/*媒体查询*/
+@media (min-width: 501px) and (max-width: 768px) {
+    main {
+        margin: 20% auto; /*调整上边距*/
+    }
+
+    main form {
+        width: 60%; /*调整宽度*/
+    }
+}
+
+@media (max-width: 500px) {
+    main {
+        margin: 20% auto; /*调整上边距*/
+    }
+
+    main form {
+        width: 60%; /*调整宽度*/
+    }
+
+    main p a {
+        display: block;
+    }
+}

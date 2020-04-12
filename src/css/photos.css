@@ -1,0 +1,244 @@
+main {
+    margin: 10px auto; /*使main居中*/
+    max-width: 1200px;
+}
+
+main h1 {
+    font-size: 1.2em;
+    border: 1px solid #bababa;
+    border-radius: 5px 5px 0 0;
+    padding: 1%;
+    margin: 0;
+    background-color: #f9f9f9;
+}
+
+.gallery {
+    border: 1px solid #bababa;
+    border-top: none;
+    border-bottom: none;
+    padding: 0;
+    margin: 0;
+    background-color: white;
+    display: flex;
+    flex-flow: column nowrap;
+}
+
+.gallery figure {
+    flex: 0 0 30%;
+    border-bottom: 1px solid #bababa;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-flow: row nowrap;
+}
+
+.gallery figure:last-of-type {
+    border-bottom: none;
+}
+
+/*图片容器，实现缩放图片长宽比例与占比不变*/
+.photo-wrapper {
+    flex: 0 0 25%;
+    padding-bottom: 20%;
+    position: relative;
+}
+
+/*img容器，控制img的大小*/
+.photo-wrapper .img-wrapper {
+    position: absolute;
+    top: 5%;
+    left: 5%;
+    width: 90%;
+    height: 90%;
+}
+
+.photo-wrapper .img-wrapper a img {
+    width: 100%;
+    height: 100%;
+}
+
+.gallery figure figcaption {
+    position: relative;
+    flex: 0 0 70%;
+    margin: 0;
+    padding: 0;
+}
+
+.gallery figure figcaption h2 {
+    margin: 2% 0 0 0;
+    padding: 0;
+    font-size: 1.5em;
+}
+
+.gallery figure figcaption p {
+    margin: 1.5% 0 0 0;
+    padding: 0;
+    font-size: 1em;
+    line-height: 150%;
+    display: -webkit-box;
+    overflow: hidden;
+    /*设置超出部分显示省略号*/
+    text-overflow: ellipsis;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+}
+
+/*按钮样式*/
+.modify {
+    margin: 0;
+    outline: none;
+    border: 1px solid transparent;
+    background-color: #269CE9;
+    color: white;
+    font-size: 1em;
+    font-family: 微软雅黑, 宋体, Arial, Helvetica, Verdana, sans-serif;
+    font-weight: bold;
+    border-radius: 3px;
+    height: 1.7em;
+    position: absolute;
+    bottom: 5%;
+    left: 17%;
+    width: 15%;
+}
+
+.modify:hover {
+    background-color: #70B9E8;
+}
+
+.modify:active {
+    background: #269CE9;
+}
+
+/*按钮样式*/
+.delete {
+    margin: 10px 0 0 0;
+    outline: none;
+    border: 1px solid transparent;
+    background-color: #ca3535;
+    color: white;
+    font-size: 1em;
+    font-family: 微软雅黑, 宋体, Arial, Helvetica, Verdana, sans-serif;
+    font-weight: bold;
+    border-radius: 3px;
+    height: 1.7em;
+    position: absolute;
+    bottom: 5%;
+    width: 15%;
+}
+
+.delete:hover {
+    background-color: #ee5f5b;
+}
+
+.delete:active {
+    background: #c43c35;
+}
+
+.page-number {
+    margin: 0;
+    padding: 20px;
+    border: 1px solid #bababa;
+    border-top: none;
+    border-radius: 0 0 5px 5px;
+    text-align: center;
+}
+
+.page-number a {
+    display: inline-block;
+    margin: 0 10px;
+    text-decoration: none;
+    color: black;
+}
+
+/*媒体查询*/
+@media (min-width: 769px) and (max-width: 1199px) {
+    main {
+        margin: 10px 10px;
+    }
+
+}
+
+@media (min-width: 501px) and (max-width: 768px) {
+    main {
+        margin-left: 2%;
+        margin-right: 2%
+    }
+
+    /*调整图片比例*/
+    .photo-wrapper {
+        padding-bottom: 30%;
+    }
+
+    .gallery figure figcaption h2 {
+        margin: 2% 0 0 0;
+        padding: 0;
+        font-size: 1em;
+    }
+
+    .gallery figure figcaption p {
+        margin: 2% 0 0 0;
+        font-size: 0.9em;
+        /*调整显示行数*/
+        -webkit-line-clamp: 4;
+    }
+
+    /*调整按钮样式*/
+    .modify {
+        font-size: 0.8em;
+        height: 1.5em;
+        width: 20%;
+        left: 25%;
+    }
+
+    .delete {
+        font-size: 0.8em;
+        height: 1.5em;
+        width: 20%;
+    }
+}
+
+@media (max-width: 500px) {
+    main {
+        margin-left: 2%;
+        margin-right: 2%
+    }
+
+    /*调整图片比例*/
+    .photo-wrapper {
+        flex: 0 0 30%;
+        padding-bottom: 35%;
+    }
+
+
+    .gallery figure figcaption {
+        flex: 0 0 65%;
+        padding: 1%;
+    }
+
+    .gallery figure figcaption h2 {
+        font-size: 1em;
+        margin: 0;
+        padding: 0;
+    }
+
+    .gallery figure figcaption p {
+        font-size: 0.8em;
+        margin: 0;
+        /*调整显示行数*/
+        -webkit-line-clamp: 3;
+    }
+
+    /*调整按钮样式*/
+    .modify {
+        font-size: 0.8em;
+        height: 1.5em;
+        width: 30%;
+        left: 35%;
+    }
+
+    .delete {
+        font-size: 0.8em;
+        height: 1.5em;
+        width: 30%;
+    }
+}

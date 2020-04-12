@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Browse</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <link href="../css/normalize.css" type="text/css" rel="stylesheet" media="all">
+    <link href="../css/navigator.css" type="text/css" rel="stylesheet" media="all">
+    <link href="../css/footer.css" type="text/css" rel="stylesheet" media="all">
+    <link href="../css/browse.css" type="text/css" rel="stylesheet" media="all">
+    <script type="text/javascript">
+        function setSecond() {
+            var x = document.getElementById("country");
+            var y = document.getElementById("city");
+            y.options.length = 0;
+            if (x.selectedIndex == 0) {
+                y.options.add(new Option("Filter By City", "0"));
+            }
+
+            if (x.selectedIndex == 1) {
+                y.options.add(new Option("Filter By City", "0"));
+                y.options.add(new Option("Beijing", "1"));
+                y.options.add(new Option("Shanghai", "2", false, true));
+            }
+            if (x.selectedIndex == 2) {
+                y.options.add(new Option("Filter By City", "0"));
+                y.options.add(new Option("Osaka", "1"));
+                y.options.add(new Option("Tokyo", "2", false, true));
+            }
+            if (x.selectedIndex == 3) {
+                y.options.add(new Option("Filter By City", "0"));
+                y.options.add(new Option("New York", "1"));
+                y.options.add(new Option("Washington", "2", false, true));
+            }
+        }
+    </script>
+</head>
+<body>
+<header>
+    <nav>
+        <ul class="nav-first"><!---导航栏一级菜单--->
+            <li><a href="home.html">Home</a></li>
+            <li><a href="browser.html" class="highlight">Browser</a></li>
+            <li><a href="search.html">Search</a></li>
+            <!---My Account--->
+            <li id="account">
+                <a><img src="../../img/images/account.jpg" alt="account"> My Account</a>
+                <!---导航栏二级下拉菜单--->
+                <ul class="nav-second">
+                    <li><a href="user/upload.html"><img src="../../img/images/upload.jpg" alt="upload"> Upload</a></li>
+                    <li><a href="user/photos.html"><img src="../../img/images/my%20photos.jpg" alt="my photos"> My Photos</a>
+                    </li>
+                    <li><a href="user/favor.html"><img src="../../img/images/my%20favorite.jpg" alt="my favorite"> My
+                        Favorite</a></li>
+                    <li><a href="../../index.html"><img src="../../img/images/log%20in.jpg" alt="login"> log in</a></li>
+                </ul>
+            </li>
+        </ul><!---导航栏一级菜单--->
+    </nav>
+</header>
+
+<div class="content-wrapper"><!---所有内容的容器--->
+    <!---侧边栏--->
+    <aside>
+        <!---搜索栏--->
+        <div id="search-by-title">
+            <h2>Search By Title</h2>
+            <div id="search">
+                <input type="search" placeholder=" Title..." name="title" value="">
+                <button onclick="alert('search by title')">search</button>
+            </div>
+        </div>
+        <!---热门内容--->
+        <div id="hot-content">
+            <h2>Hot Content<span>▼</span></h2>
+            <div id="hot-content-link">
+                <a href="" onclick="alert('browser')">Scenery</a>
+                <a href="" onclick="alert('browser')">City</a>
+                <a href="" onclick="alert('browser')">People</a>
+                <a href="" onclick="alert('browser')">Animal</a>
+            </div>
+        </div>
+        <!---热门国家--->
+        <div id="hot-country">
+            <h2>Hot Country<span>▼</span></h2>
+            <div id="hot-country-link">
+                <a href="" onclick="alert('browser')">China</a>
+                <a href="" onclick="alert('browser')">Italy</a>
+                <a href="" onclick="alert('browser')">Japan</a>
+                <a href="" onclick="alert('browser')">America</a>
+            </div>
+        </div>
+        <!---热门城市--->
+        <div id="hot-city">
+            <h2>Hot City<span>▼</span></h2>
+            <div id="hot-city-link">
+                <a href="" onclick="alert('browser')">Shanghai</a>
+                <a href="" onclick="alert('browser')">New York</a>
+                <a href="" onclick="alert('browser')">Tokyo</a>
+                <a href="" onclick="alert('browser')">Beijing</a>
+            </div>
+        </div>
+    </aside>
+
+    <!---主要内容--->
+    <main>
+        <h1>Filter</h1>
+        <!---筛选区--->
+        <div id="filter">
+            <select>
+                <option>Filter By Content</option>
+                <option>Scenery</option>
+                <option>City</option>
+                <option>People</option>
+                <option>Animal</option>
+            </select>
+            <select id="country" onchange="setSecond(this.value)">
+                <option value="0">Filter By Country</option>
+                <option value="1">China</option>
+                <option value="2">Japan</option>
+                <option value="3">America</option>
+            </select>
+            <select id="city">
+                <option>Filter By City</option>
+            </select>
+            <button onclick="alert('filter')">Filter</button>
+        </div>
+
+        <!---图片展示--->
+        <div class="gallery">
+            <div class="photo-wrapper"><!---图片容器--->
+                <div class="img-wrapper"><!---img容器--->
+                    <a href="details.html"><img src="../../img/travel-images/normal/medium/5855174537.jpg"
+                                                alt="5855174537"></a>
+                </div>
+            </div>
+            <div class="photo-wrapper"><!---图片容器--->
+                <div class="img-wrapper"><!---img容器--->
+                    <a href="details.html"><img src="../../img/travel-images/normal/medium/222222.jpg" alt="222222"></a>
+                </div>
+            </div>
+            <div class="photo-wrapper"><!---图片容器--->
+                <div class="img-wrapper"><!---img容器--->
+                    <a href="details.html"><img src="../../img/travel-images/normal/medium/9493997865.jpg"
+                                                alt="9493997865"></a>
+                </div>
+            </div>
+            <div class="photo-wrapper"><!---图片容器--->
+                <div class="img-wrapper"><!---img容器--->
+                    <a href="details.html"><img src="../../img/travel-images/normal/medium/8152016381.jpg"
+                                                alt="8152016381"></a>
+                </div>
+            </div>
+            <div class="photo-wrapper"><!---图片容器--->
+                <div class="img-wrapper"><!---img容器--->
+                    <a href="details.html"><img src="../../img/travel-images/normal/medium/9496787858.jpg"
+                                                alt="9496787858"></a>
+                </div>
+            </div>
+            <div class="photo-wrapper"><!---图片容器--->
+                <div class="img-wrapper"><!---img容器--->
+                    <a href="details.html"><img src="../../img/travel-images/normal/medium/6114850721.jpg"
+                                                alt="6114850721"></a>
+                </div>
+            </div>
+            <div class="photo-wrapper"><!---图片容器--->
+                <div class="img-wrapper"><!---img容器--->
+                    <a href="details.html"><img src="../../img/travel-images/normal/medium/5855774224.jpg"
+                                                alt="5855774224"></a>
+                </div>
+            </div>
+            <div class="photo-wrapper"><!---图片容器--->
+                <div class="img-wrapper"><!---img容器--->
+                    <a href="details.html"><img src="../../img/travel-images/normal/medium/8710247776.jpg"
+                                                alt="8710247776"></a>
+                </div>
+            </div>
+            <div class="photo-wrapper"><!---图片容器--->
+                <div class="img-wrapper"><!---img容器--->
+                    <a href="details.html"><img src="../../img/travel-images/normal/medium/6115603234.jpg"
+                                                alt="6115603234"></a>
+                </div>
+            </div>
+            <!---页码--->
+            <div class="page-number">
+                <a href="">&lt;</a>
+                <a href="">1</a>
+                <a href="">2</a>
+                <a href="">3</a>
+                <a href="">4</a>
+                <a href="">5</a>
+                <a href="">&gt;</a>
+            </div>
+        </div>
+    </main>
+</div>
+
+<footer>
+    <p class="copyright">Copyright&copy; 2020-2020. All Rights Reserved. 备案号: 昌-web-fundamental-19302010016</p>
+</footer>
+</body>
+</html>

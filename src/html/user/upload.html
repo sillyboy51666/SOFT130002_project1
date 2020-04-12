@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Upload</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <link href="../../css/normalize.css" type="text/css" rel="stylesheet" media="all">
+    <link href="../../css/navigator.css" type="text/css" rel="stylesheet" media="all">
+    <link href="../../css/footer.css" type="text/css" rel="stylesheet" media="all">
+    <link href="../../css/upload.css" type="text/css" rel="stylesheet" media="all">
+    <script>
+        function uploadImg(file, photoWrapper) {
+            var div = document.getElementById(photoWrapper);
+            if (file.files && file.files[0]) {
+                div.innerHTML = '<img id="photoUploaded">'; //生成图片
+                var img = document.getElementById('photoUploaded'); //获得用户上传的图片节点
+                var reader = new FileReader(); //判断图片是否加载完毕
+                reader.onload = function (evt) {
+                    if (reader.readyState === 2) { //加载完毕后赋值
+                        img.src = evt.target.result;
+                        document.getElementById("uploadLabel").textContent = '图片已上传'
+                    }
+                }
+                reader.readAsDataURL(file.files[0]);
+            }
+        }
+    </script>
+</head>
+<body>
+<header>
+    <nav>
+        <ul class="nav-first"><!---导航栏一级菜单--->
+            <li><a href="../home.html">Home</a></li>
+            <li><a href="../browser.html">Browser</a></li>
+            <li><a href="../search.html">Search</a></li>
+            <!---My Account--->
+            <li id="account">
+                <a><img src="../../../img/images/account.jpg" alt="account"> My Account</a>
+                <!---导航栏二级下拉菜单--->
+                <ul class="nav-second">
+                    <li><a href="upload.html"><img src="../../../img/images/upload.jpg" alt="upload"> Upload</a></li>
+                    <li><a href="photos.html"><img src="../../../img/images/my%20photos.jpg" alt="my photos"> My Photos</a>
+                    </li>
+                    <li><a href="favor.html"><img src="../../../img/images/my%20favorite.jpg" alt="my favorite"> My
+                        Favorite</a></li>
+                    <li><a href="../../../index.html"><img src="../../../img/images/log%20in.jpg" alt="login"> log in</a></li>
+                </ul>
+            </li>
+        </ul><!---导航栏一级菜单--->
+    </nav>
+</header>
+
+<!---主要内容--->
+<main>
+    <h1>Upload</h1>
+    <form method="post" action="photos.html">
+        <!---上传照片--->
+        <div id="upload-photo">
+            <div id="preview">
+                <img id="photoUploaded" src="" alt="">
+                <label for="uploadImage" id="uploadLabel">选择你的照片</label>
+            </div>
+            <input type="file" accept="image/*" name="imageUpload" id="uploadImage" onchange="uploadImg(this,'preview')"
+                   hidden>
+        </div>
+        <!---标题--->
+        <label for="title">Title:</label>
+        <input type="text" name="title" id="title" value="">
+        <!---描述--->
+        <label for="description">Description:</label>
+        <textarea id="description"></textarea>
+        <!---国家--->
+        <label for="country">Country:</label>
+        <input type="text" name="country" id="country" value="">
+        <!---城市--->
+        <label for="city">City:</label>
+        <input type="text" name="city" id="city" value="">
+        <button onclick="alert('submit');">Submit</button>
+    </form>
+</main>
+<footer>
+    <p class="copyright">Copyright&copy; 2020-2020. All Rights Reserved. 备案号: 昌-web-fundamental-19302010016</p>
+</footer>
+</body>
+</html>

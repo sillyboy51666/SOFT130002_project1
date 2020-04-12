@@ -1,0 +1,203 @@
+main * {
+    margin: 0;
+    padding: 0;
+}
+
+main {
+    margin: 10px auto;
+    max-width: 1200px;
+}
+
+main h1 {
+    font-size: 1.3em;
+    border-radius: 5px 5px 0 0;
+    border: 1px solid #bababa;
+    padding: 1%;
+    margin: 0;
+    background-color: #f9f9f9;
+}
+
+main figure {
+    border-radius: 0 0 5px 5px;
+    border: 1px solid #bababa;
+    border-top: none;
+    padding: 2%;
+    overflow: hidden;
+}
+
+main figure h2 {
+    text-align: center;
+    margin: 0 0 2% 0;
+}
+
+main figure > div {
+    width: 100%;
+    display: flex;
+    flex-flow: row nowrap;
+}
+
+main figure .photo-wrapper {
+    flex: 0 0 45%;
+    padding-bottom: 45%;
+    position: relative;
+}
+
+main figure .img-wrapper {
+    position: absolute;
+    top: 0;
+    left: 5%;
+    width: 90%;
+    height: 90%;
+}
+
+main figure .img-wrapper img {
+    width: 100%;
+    height: 100%;
+}
+
+main figure #information {
+    margin: 0;
+    flex: 0 0 50%;
+}
+
+main figure #information #likeNumber {
+    width: 100%;
+}
+
+main figure #information #likeNumber h3 {
+    font-size: 1em;
+    border-radius: 5px 5px 0 0;
+    border: 1px solid #bababa;
+    padding: 2%;
+    margin: 0;
+    background-color: #f9f9f9;
+}
+
+main figure #information #likeNumber p {
+    text-align: center;
+    font-size: 2em;
+    border-radius: 0 0 5px 5px;
+    border: 1px solid #bababa;
+    border-top: none;
+    padding: 2%;
+    margin: 0;
+    background-color: white;
+    color: red;
+}
+
+main figure #information #imgDetails {
+    margin: 2% 0;
+}
+
+main figure #information #imgDetails h3 {
+    font-size: 1em;
+    border-radius: 5px 5px 0 0;
+    border: 1px solid #bababa;
+    padding: 2%;
+    margin: 0;
+    background-color: #f9f9f9;
+}
+
+main figure #information #imgDetails p {
+    font-size: 1em;
+    border: 1px solid #bababa;
+    border-top: none;
+    padding: 2%;
+    margin: 0;
+    background-color: white;
+}
+
+main figure #information #imgDetails p:last-of-type {
+    border-radius: 0 0 5px 5px;
+}
+
+main figure #information button {
+    width: 100%;
+    height: 10%;
+    outline: none;
+    border: 1px solid transparent;
+    background-color: #ca3535;
+    color: white;
+    font-size: 1em;
+    font-family: 微软雅黑, 宋体, Arial, Helvetica, Verdana, sans-serif;
+    font-weight: bold;
+    border-radius: 3px;
+}
+
+main figure #information button:hover {
+    background-color: #ee5f5b;
+}
+
+main figure #information button:active {
+    background: #c43c35;
+}
+
+main figure figcaption {
+    font-size: 1em;
+    display: block;
+    clear: both;
+    padding: 0;
+}
+
+@media (min-width: 501px) and (max-width: 768px) {
+    main figure #information #likeNumber h3 {
+        font-size: 0.8em;
+        padding: 2%;
+        margin: 0;
+    }
+
+    main figure #information #likeNumber p {
+        font-size: 1.6em;
+        padding: 2%;
+    }
+
+    main figure #information #imgDetails {
+        margin: 2% 0;
+    }
+
+    main figure #information #imgDetails h3 {
+        font-size: 0.8em;
+        padding: 2%;
+        margin: 0;
+    }
+
+    main figure #information #imgDetails p {
+        font-size: 0.8em;
+        padding: 2%;
+        margin: 0;
+    }
+}
+
+@media (max-width: 500px) {
+    main {
+        margin-left: 5%;
+        margin-right: 5%;
+    }
+
+    main figure {
+        position: relative;
+    }
+
+    main figure > div {
+        display: block;
+    }
+
+    main figure .photo-wrapper {
+        padding-bottom: 90%;
+    }
+
+    main figure #information {
+        margin-top: -5%;
+    }
+
+    main figure figcaption {
+        margin-bottom: 10%;
+    }
+
+    main figure #information button {
+        position: absolute;
+        width: 90%;
+        bottom: 1%;
+        height: 3%;
+    }
+}

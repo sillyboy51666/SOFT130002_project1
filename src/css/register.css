@@ -1,0 +1,9 @@
+main {
+    margin: 0 auto; /*调整上边距*/
+}
+
+@media (min-width: 501px) and (max-width: 768px) {
+    main {
+        margin: 5% auto; /*调整上边距*/
+    }
+}

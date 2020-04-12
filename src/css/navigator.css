@@ -1,0 +1,86 @@
+nav {
+    background-color: black;
+    margin: 0;
+    padding: 0;
+    overflow: hidden; /*防止浮动产生的问题*/
+}
+
+.nav-first {
+    margin: 0 auto;
+    padding: 0;
+    max-width: 1200px;
+}
+
+.nav-first > li {
+    list-style-type: none;
+    float: left; /*左浮*/
+    margin: 0;
+    padding: 0;
+}
+
+/*My Account部分右浮*/
+.nav-first #account {
+    float: right;
+}
+
+/*设置导航栏连接样式*/
+.nav-first > li > a {
+    display: block;
+    text-decoration: none;
+    font-size: 0.8em;
+    color: white;
+    font-weight: normal;
+    padding: 0.8em;
+    border-right: 1px dashed rgba(255, 255, 255, .75);
+    transition: all .5s;
+}
+
+nav .nav-first li:nth-of-type(3) a, nav #account a {
+    border-right: none;
+}
+
+/*高亮部分*/
+nav a:hover, nav a.highlight {
+    background-color: rgb(93, 43, 78);
+}
+
+nav .nav-first > li > a > img {
+    height: 0.9em;
+    border-radius: 50%;
+}
+
+/*下拉菜单*/
+nav .nav-second {
+    list-style-type: none;
+    margin-left: 0;
+    padding-left: 0;
+    display: none; /*隐藏下拉菜单*/
+    position: absolute;
+    z-index: 2; /*菜单叠放顺序靠后*/
+}
+
+nav .nav-second a:hover {
+    background-color: rgb(93, 43, 78);
+}
+
+nav li:hover .nav-second {
+    display: block;
+}
+
+/*设置导航栏连接样式*/
+nav .nav-second li a {
+    background-color: black;
+    display: block;
+    text-decoration: none;
+    font-size: 0.8em;
+    color: white;
+    font-weight: normal;
+    padding: 0.8em;
+    border-right: 1px dashed rgba(255, 255, 255, .75);
+}
+
+nav .nav-second img {
+    border-radius: 100%;
+    height: 1em;
+}
+
